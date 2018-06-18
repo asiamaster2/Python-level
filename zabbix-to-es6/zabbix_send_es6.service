@@ -1,0 +1,19 @@
+[Unit]
+Description=Sending the values from zabbix database to ES6.
+
+[Service]
+Type=simple
+User=USERIDWHOWILLRUNTHISDAEMON
+Group=THEGROUP
+WorkingDirectory=/usr/bin/pythonscript
+ExecStart=/usr/bin/pythonscript/zabbix-to-es6.py
+SyslogIdentifier = zabbixsendes6
+#Standard Output = syslog
+Standard Error = syslog
+Restart = always
+RestartSec = 30
+PIDFile=/usr/bin/pythonscript/scriptisrunning
+
+[Install]
+WantedBy=multi-user.target
+
