@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-monitoring-influx-to-es6-test
+  labels:
+    name: k8s-monitoring-influx-to-es6-test
+spec:
+  selector:
+    matchLabels:
+      name: k8s-monitoring-influx-to-es6-test
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+     maxSurge: 1
+     maxUnavailable: 0
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        name: k8s-monitoring-influx-to-es6-test
+    spec:
+      containers:
+      - name: k8s-monitoring-influx-to-es6-test
+        image: IMAGENAME-STAGING
+        volumeMounts:
+        - name: monitoringscript
+          mountPath: "/usr/local/infconf"
+          readOnly: true
+      volumes:
+      - name: monitoringscript
+        secret:
+          secretName : secret-k8s-influx-es6-stg
