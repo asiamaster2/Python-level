@@ -14,3 +14,5 @@ These scripts are what I created with Python.
 - This is the script to collect the values from Zabbix database(MariaDB) and send to Elasticsearch.
 - This script is run as daemon with systemd.
 
+4. zabbix
+- This is the script to create a screen per host items or host graph per host - API
