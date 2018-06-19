@@ -85,7 +85,7 @@ def main():
     parser.add_argument('password', metavar='W', type=str,
                         help='zabbix password')
     parser.add_argument('-c', dest='columns', type=int, default=3,
-                        help='number of columns in the screen (default: 3)')
+                        help='number of columns in the screen (default:3)')
 
     args = parser.parse_args()
     screentype = args.screentype
