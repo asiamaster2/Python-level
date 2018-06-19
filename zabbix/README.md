@@ -11,7 +11,7 @@ You have to check&change the variable's value if it's necessary.
 ```
 usage: zabbix-create-screen.py [-h] [-c COLUMNS] A H N V W
 
-Create Zabbix screen from all of a host Items or Graphs.
+Create Zabbix screen from all of a host Items or all of graphs per host.
 
 positional arguments:
   A           Set the type as "graph" or "host". This script will create
